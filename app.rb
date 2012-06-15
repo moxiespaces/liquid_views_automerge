@@ -21,24 +21,33 @@ get '/' do
 end
 
 get '/merge_liquid_templates' do
-  t = Thread.new do
-    do_github_magic
+  push = JSON.parse(params[:payload])
+  branch = push["ref"].split("/").last
+
+  if branch >= "2.2.5" || branch == "master"
+    t = Thread.new do
+      do_github_magic(branch)
+    end
+    "template merge requested"
   end
-  "template merge requested"
 end
 
 
 
-def do_github_magic
+def do_github_magic(branch)
   `mkdir tmp`
+
+  puts "git clone git@github.com:moxiespaces/social_navigator.git tmp/social_navigator"
   `git clone git@github.com:moxiespaces/social_navigator.git tmp/social_navigator`
+
+  puts "cd tmp/social_navigator"
   Dir.chdir "tmp/social_navigator"
 
+  puts "git checkout #{branch}"
+  `git checkout #{branch}`
+
+  puts "git pull"
   `git pull`
-  output = `git status`
-  regex = /On branch (.*)/
-  branch = regex.match(output)[1]
-  puts "social_navigator is on branch: #{branch}"
 
   puts "rm -rf tmp/spaces-liquid-templates"
   `rm -rf tmp/spaces-liquid-templates`
