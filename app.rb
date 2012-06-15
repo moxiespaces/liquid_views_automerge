@@ -20,7 +20,7 @@ get '/' do
   "Welcome to template_merger"
 end
 
-get '/merge_liquid_templates' do
+post '/merge_liquid_templates' do
   push = JSON.parse(params[:payload])
   branch = push["ref"].split("/").last
 
