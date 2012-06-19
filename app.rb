@@ -3,10 +3,6 @@ require 'open3'
 
 set :logging, true
 
-before do
-  parse_params
-end
-
 def exe_cmd(cmd)
   result = {}
   Open3.popen3(cmd) do |stdin, stdout, stderr|
