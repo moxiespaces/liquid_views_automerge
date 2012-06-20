@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'open3'
-require 'JSON'
+require 'json'
 
 set :logging, true
 
