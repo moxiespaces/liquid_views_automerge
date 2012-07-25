@@ -32,6 +32,7 @@ end
 
 
 def do_github_magic(branch)
+  liquid_templates_branch = "release-#{branch}"
   `mkdir tmp`
 
   logger.info "git clone git@github.com:moxiespaces/social_navigator.git tmp/social_navigator"
@@ -55,30 +56,31 @@ def do_github_magic(branch)
   logger.info "cd tmp/spaces-liquid-templates"
   Dir.chdir "tmp/spaces-liquid-templates"
 
-  logger.info "git checkout #{branch}"
-  result = exe_cmd("git checkout #{branch}")
-  if !result[:stderr].empty? && !result[:stderr] =~ /Switched to a new branch '[^']+'/
+  logger.info "git checkout #{liquid_templates_branch}"
+  result = exe_cmd("git checkout #{liquid_templates_branch}")
+  switch_to_branch = result[:stderr] =~ /Switched to a new branch '[^']+'/
+  if !result[:stderr].empty? && switch_to_branch.nil?
 
-    logger.info "checking if branch #{branch} exists for spaces-liquid-templates: #{result[:stderr]}"
+    logger.info "checking if branch #{liquid_templates_branch} exists for spaces-liquid-templates: #{result[:stderr]}"
 
     # branch does not exist yet... 
     if result[:stderr] =~ /error: pathspec '[^']+' did not match any file\(s\) known to git/
-      logger.info "#{branch} doesn't exist"
+      logger.info "#{liquid_templates_branch} doesn't exist"
       # create the branch based on master
 
-      logger.info "git checkout -b #{branch} master"
-      result = exe_cmd("git checkout -b #{branch} master")
+      logger.info "git checkout -b #{liquid_templates_branch} master"
+      result = exe_cmd("git checkout -b #{liquid_templates_branch} master")
       if result['stderr'].nil?
 
         # push the branch to github
-        logger.info "git push origin #{branch}"
-        result = exe_cmd("git push origin #{branch}")
+        logger.info "git push origin #{liquid_templates_branch}"
+        result = exe_cmd("git push origin #{liquid_templates_branch}")
 
         # something bad happened
         if result['stderr']
           # delete the local branch since there was an error
-          logger.info "git branch -d #{branch}"
-          exe_cmd("git branch -d #{branch}")
+          logger.info "git branch -d #{liquid_templates_branch}"
+          exe_cmd("git branch -d #{liquid_templates_branch}")
           exit
         end
       end
@@ -102,7 +104,7 @@ def do_github_magic(branch)
   logger.info "git commit -a --message=\"auto merge templates\""
   `git commit -a --message="auto merge templates"`
 
-  logger.info "git push origin #{branch}"
-  `git push origin #{branch}`
+  logger.info "git push origin #{liquid_templates_branch}"
+  `git push origin #{liquid_templates_branch}`
 
 end
