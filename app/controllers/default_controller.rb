@@ -10,9 +10,10 @@
       end
       push = JSON.parse(params[:payload])
       branch = push["ref"].split("/").last
-
+      logger.info "branch: #{branch}"
 
       if branch.start_with?("release-") || branch == "master"
+        logger.info "branch starts with release- so let's do github magic"
         t = Thread.new do
           do_github_magic(branch)
         end
