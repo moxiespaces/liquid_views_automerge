@@ -1,5 +1,4 @@
 LiquidMerge::Application.routes.draw do
-  get "default/index"
-  post "default/merge_liquid_templates"
+  match '/merge_liquid_templates' => 'default#merge_liquid_templates', :via => :post
   root :to => 'default#index'
 end

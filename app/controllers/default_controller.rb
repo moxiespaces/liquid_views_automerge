@@ -5,6 +5,9 @@
 
     def merge_liquid_templates
       logger.info "github payload: #{params[:payload]}"
+      if params[:payload].blank?
+        return render :text => 'no github payload!'
+      end
       push = JSON.parse(params[:payload])
       branch = push["ref"].split("/").last
 
@@ -14,6 +17,8 @@
           do_github_magic(branch)
         end
         render :text => "template merge requested"
+      else
+        render :text => 'branch must start with "release-" or branch master to be automerged'
       end
     end
 
