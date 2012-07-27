@@ -18,6 +18,7 @@ get '/' do
 end
 
 post '/merge_liquid_templates' do
+  logger.info "github payload: #{params[:payload]}"
   push = JSON.parse(params[:payload])
   branch = push["ref"].split("/").last
 
