@@ -63,7 +63,7 @@
       logger.info "git checkout #{liquid_templates_branch}"
       result = exe_cmd("git checkout #{liquid_templates_branch}")
       switch_to_branch = result[:stderr] =~ /Switched to a new branch '[^']+'/
-      if !result[:stderr].empty? && switch_to_branch.nil?
+      if !result[:stderr].empty? && switch_to_branch.nil? && branch != "master"
 
         logger.info "checking if branch #{liquid_templates_branch} exists for spaces-liquid-templates: #{result[:stderr]}"
 
