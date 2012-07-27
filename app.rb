@@ -14,6 +14,7 @@ def exe_cmd(cmd)
 end
 
 get '/' do
+  logger.info "welcome to template_merger"
   "Welcome to template_merger"
 end
 
