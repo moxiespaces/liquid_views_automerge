@@ -21,7 +21,8 @@ post '/merge_liquid_templates' do
   push = JSON.parse(params[:payload])
   branch = push["ref"].split("/").last
 
-  if branch >= "2.2.5" || branch == "master"
+
+  if branch.start_with?("release-") || branch == "master"
     t = Thread.new do
       do_github_magic(branch)
     end
