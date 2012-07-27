@@ -1,0 +1,53 @@
+2012/07/12 17:27:47 [notice] 47188#0: using the "kqueue" event method
+2012/07/12 17:27:47 [notice] 47188#0: nginx/1.2.1
+2012/07/12 17:27:47 [notice] 47188#0: built by gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.9.00)
+2012/07/12 17:27:47 [notice] 47188#0: OS: Darwin 11.4.0
+2012/07/12 17:27:47 [notice] 47188#0: hw.ncpu: 8
+2012/07/12 17:27:47 [notice] 47188#0: net.inet.tcp.sendspace: 65536
+2012/07/12 17:27:47 [notice] 47188#0: kern.ipc.somaxconn: 128
+2012/07/12 17:27:47 [notice] 47188#0: getrlimit(RLIMIT_NOFILE): 2560:9223372036854775807
+2012/07/12 17:27:47 [notice] 47196#0: start worker processes
+2012/07/12 17:27:47 [notice] 47196#0: start worker process 47197
+2012/07/12 17:27:47 [info] 47197#0: *1 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:27:47 [info] 47197#0: *2 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:27:49 [error] 47197#0: *4 "/Users/ssherman/Documents/dev/liquid_views_automerge/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "0.0.0.0"
+2012/07/12 17:28:47 [info] 47197#0: *3 client timed out (60: Operation timed out) while reading client request line, client: 127.0.0.1, server: 0.0.0.0:3543
+2012/07/12 17:29:32 [info] 47197#0: *5 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:29:32 [notice] 47196#0: signal 15 (SIGTERM) received, exiting
+2012/07/12 17:29:32 [notice] 47197#0: exiting
+2012/07/12 17:29:32 [notice] 47196#0: signal 23 (SIGIO) received
+2012/07/12 17:29:32 [notice] 47197#0: exit
+2012/07/12 17:29:32 [notice] 47196#0: signal 20 (SIGCHLD) received
+2012/07/12 17:29:32 [notice] 47196#0: worker process 47197 exited with code 0
+2012/07/12 17:29:32 [notice] 47196#0: exit
+2012/07/12 17:29:57 [notice] 47242#0: using the "kqueue" event method
+2012/07/12 17:29:57 [notice] 47242#0: nginx/1.2.1
+2012/07/12 17:29:57 [notice] 47242#0: built by gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.9.00)
+2012/07/12 17:29:57 [notice] 47242#0: OS: Darwin 11.4.0
+2012/07/12 17:29:57 [notice] 47242#0: hw.ncpu: 8
+2012/07/12 17:29:57 [notice] 47242#0: net.inet.tcp.sendspace: 65536
+2012/07/12 17:29:57 [notice] 47242#0: kern.ipc.somaxconn: 128
+2012/07/12 17:29:57 [notice] 47242#0: getrlimit(RLIMIT_NOFILE): 2560:9223372036854775807
+2012/07/12 17:29:57 [notice] 47250#0: start worker processes
+2012/07/12 17:29:57 [notice] 47250#0: start worker process 47251
+2012/07/12 17:29:57 [info] 47251#0: *1 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:29:57 [info] 47251#0: *2 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:29:59 [error] 47251#0: *4 "/Users/ssherman/Documents/dev/liquid_views_automerge/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "0.0.0.0"
+2012/07/12 17:30:30 [error] 47251#0: *5 "/Users/ssherman/Documents/dev/liquid_views_automerge/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:3543"
+2012/07/12 17:30:30 [error] 47251#0: *5 open() "/Users/ssherman/Documents/dev/liquid_views_automerge/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET /favicon.ico HTTP/1.1", host: "localhost:3543"
+2012/07/12 17:30:36 [error] 47251#0: *5 "/Users/ssherman/Documents/dev/liquid_views_automerge/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:3543"
+2012/07/12 17:30:36 [error] 47251#0: *5 open() "/Users/ssherman/Documents/dev/liquid_views_automerge/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET /favicon.ico HTTP/1.1", host: "localhost:3543"
+2012/07/12 17:30:47 [info] 47251#0: *6 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:30:57 [info] 47251#0: *3 client timed out (60: Operation timed out) while reading client request line, client: 127.0.0.1, server: 0.0.0.0:3543
+2012/07/12 17:31:57 [info] 47251#0: *7 client timed out (60: Operation timed out) while reading client request line, client: 127.0.0.1, server: 0.0.0.0:3543
+2012/07/12 17:31:58 [error] 47251#0: *9 open() "/Users/ssherman/Documents/dev/liquid_views_automerge/public/merge_liquid_templates" failed (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET /merge_liquid_templates HTTP/1.1", host: "localhost:3543"
+2012/07/12 17:31:58 [error] 47251#0: *9 open() "/Users/ssherman/Documents/dev/liquid_views_automerge/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET /favicon.ico HTTP/1.1", host: "localhost:3543"
+2012/07/12 17:32:08 [info] 47251#0: *10 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:32:35 [info] 47251#0: *8 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:32:35 [notice] 47250#0: signal 15 (SIGTERM) received, exiting
+2012/07/12 17:32:35 [notice] 47251#0: exiting
+2012/07/12 17:32:35 [notice] 47250#0: signal 23 (SIGIO) received
+2012/07/12 17:32:35 [notice] 47251#0: exit
+2012/07/12 17:32:35 [notice] 47250#0: signal 20 (SIGCHLD) received
+2012/07/12 17:32:35 [notice] 47250#0: worker process 47251 exited with code 0
+2012/07/12 17:32:35 [notice] 47250#0: exit

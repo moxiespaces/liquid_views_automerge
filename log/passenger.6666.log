@@ -1,0 +1,21 @@
+2012/07/12 17:33:46 [notice] 47497#0: using the "kqueue" event method
+2012/07/12 17:33:46 [notice] 47497#0: nginx/1.2.1
+2012/07/12 17:33:46 [notice] 47497#0: built by gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.9.00)
+2012/07/12 17:33:46 [notice] 47497#0: OS: Darwin 11.4.0
+2012/07/12 17:33:46 [notice] 47497#0: hw.ncpu: 8
+2012/07/12 17:33:46 [notice] 47497#0: net.inet.tcp.sendspace: 65536
+2012/07/12 17:33:46 [notice] 47497#0: kern.ipc.somaxconn: 128
+2012/07/12 17:33:46 [notice] 47497#0: getrlimit(RLIMIT_NOFILE): 2560:9223372036854775807
+2012/07/12 17:33:46 [notice] 47505#0: start worker processes
+2012/07/12 17:33:46 [notice] 47505#0: start worker process 47506
+2012/07/12 17:33:46 [info] 47506#0: *1 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:33:46 [info] 47506#0: *2 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:33:48 [error] 47506#0: *4 "/Users/ssherman/Documents/dev/liquid_views_automerge/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "0.0.0.0"
+2012/07/12 17:33:56 [info] 47506#0: *3 client prematurely closed connection while reading client request line, client: 127.0.0.1, server: _
+2012/07/12 17:33:57 [notice] 47505#0: signal 15 (SIGTERM) received, exiting
+2012/07/12 17:33:57 [notice] 47506#0: exiting
+2012/07/12 17:33:57 [notice] 47505#0: signal 23 (SIGIO) received
+2012/07/12 17:33:57 [notice] 47506#0: exit
+2012/07/12 17:33:57 [notice] 47505#0: signal 20 (SIGCHLD) received
+2012/07/12 17:33:57 [notice] 47505#0: worker process 47506 exited with code 0
+2012/07/12 17:33:57 [notice] 47505#0: exit

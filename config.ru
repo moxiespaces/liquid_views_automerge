@@ -1,14 +1,4 @@
-# encoding: UTF-8
- 
-Sinatra::Application.default_options.merge!(
-  :run => false,
-  :env => :production,
-  :raise_errors => true
-)
- 
-log = File.new("sinatra.log", "a")
-STDOUT.reopen(log)
-STDERR.reopen(log)
- 
-require './app'
-run Sinatra::Application
+# This file is used by Rack-based servers to start the application.
+
+require ::File.expand_path('../config/environment',  __FILE__)
+run LiquidMerge::Application
