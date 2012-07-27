@@ -10,16 +10,16 @@
       end
       push = JSON.parse(params[:payload])
       branch = push["ref"].split("/").last
-      logger.info "branch: #{branch}"
 
-      if branch.start_with?("release-") || branch == "master"
-        logger.info "branch starts with release- so let's do github magic"
+      if branch
+        logger.info "doing github automerge for branch #{branch}"
         t = Thread.new do
           do_github_magic(branch)
         end
         render :text => "template merge requested"
       else
-        render :text => 'branch must start with "release-" or branch master to be automerged'
+        logger.info "no branch found"
+        render :text => "no branch found!"
       end
     end
 
