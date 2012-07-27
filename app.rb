@@ -34,14 +34,19 @@ end
 
 
 def do_github_magic(branch)
-  liquid_templates_branch = "release-#{branch}"
+
+  liquid_templates_branch = if branch == "master"
+    "master"
+  else
+    "release-#{branch}"
+  end
   `mkdir tmp`
 
-  logger.info "git clone git@github.com:moxiespaces/social_navigator.git tmp/social_navigator"
-  `git clone git@github.com:moxiespaces/social_navigator.git tmp/social_navigator`
+  logger.info "git clone git@github.com:moxiespaces/social_navigator.git tmp/social_navigator_#{branch}"
+  `git clone git@github.com:moxiespaces/social_navigator.git tmp/social_navigator_#{branch}`
 
-  logger.info "cd tmp/social_navigator"
-  Dir.chdir "tmp/social_navigator"
+  logger.info "cd tmp/social_navigator_#{branch}"
+  Dir.chdir "tmp/social_navigator_#{branch}"
 
   logger.info "git checkout #{branch}"
   `git checkout #{branch}`
@@ -49,14 +54,14 @@ def do_github_magic(branch)
   logger.info "git pull"
   `git pull`
 
-  logger.info "rm -rf tmp/spaces-liquid-templates"
-  `rm -rf tmp/spaces-liquid-templates`
+  logger.info "rm -rf tmp/spaces-liquid-templates_#{liquid_templates_branch}"
+  `rm -rf tmp/spaces-liquid-templates_#{liquid_templates_branch}`
 
-  logger.info "git clone git@github.com:moxiespaces/spaces-liquid-templates.git tmp/spaces-liquid-templates"
-  `git clone git@github.com:moxiespaces/spaces-liquid-templates.git tmp/spaces-liquid-templates`
+  logger.info "git clone git@github.com:moxiespaces/spaces-liquid-templates.git tmp/spaces-liquid-templates_#{liquid_templates_branch}"
+  `git clone git@github.com:moxiespaces/spaces-liquid-templates.git tmp/spaces-liquid-templates_#{liquid_templates_branch}`
 
-  logger.info "cd tmp/spaces-liquid-templates"
-  Dir.chdir "tmp/spaces-liquid-templates"
+  logger.info "cd tmp/spaces-liquid-templates_#{liquid_templates_branch}"
+  Dir.chdir "tmp/spaces-liquid-templates_#{liquid_templates_branch}"
 
   logger.info "git checkout #{liquid_templates_branch}"
   result = exe_cmd("git checkout #{liquid_templates_branch}")
